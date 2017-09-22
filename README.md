@@ -1,5 +1,4 @@
 # hid203
-# Comments
 
 # Owner
 
