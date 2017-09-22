@@ -21,8 +21,8 @@ paper1:
    - Chandwani, Nisha
    hid:
    - 203
-   title: This is my paper about xyz
-   abstract: This paper showcases tis and that and the other
+   title: Big Data Analytics using Spark
+   abstract: This paper will explore the Apache Spark platform for analyzing and performing machine learning tasks on Big Data.
    url: https://github.com/bigdata-i523/sample-hid000/paper1/paper1.pdf
 ```
    
