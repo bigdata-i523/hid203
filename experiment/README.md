@@ -7,6 +7,7 @@ Command to run the script:
 
 ```
 Output when sample-000/notebook.md is provided as input argument:
+
 Yaml representation of data:
 Inactive: [12/23/17 - 12/24/17 No work due to Christmas - this is just ana example
     so do not out it in your notebook]
@@ -31,6 +32,7 @@ Student attended the below classes:
 
 ```
 Output when hid203/notebook.md, which has missing sections, is provided as input argument:
+
 Yaml representation of data:
 Logistic: [08/21/17 Read the entire class overview section]
 Practice: [08/24/17 Bought Raspberry PI, 08/25/17 Enabled Python 2 and 3 via pyenv
