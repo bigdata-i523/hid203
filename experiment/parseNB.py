@@ -1,3 +1,4 @@
+import sys
 import yaml
 from datetime import datetime
 
@@ -53,8 +54,8 @@ def getDates(meetings):
 
 
 def main():
-    # parsedData = parseFile(sys.argv[1])
-    parsedData = parseFile('notebook.md')
+    parsedData = parseFile(sys.argv[1])
+    # parsedData = parseFile('notebook.md')
     finalData = yamlToDict(parsedData)
     missingSections = checkSections(finalData)
     print "Below section(s) not present in notebook.md:"
