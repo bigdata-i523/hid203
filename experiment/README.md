@@ -2,7 +2,8 @@
 
 ```
 The script can be used to check for the correctness of the file, notebook.md.
-The script checks if all the required sections are present. It also extracts and prints the dates from the section "Meetings" which can be used to check if a student attended a residential class.
+The script checks if all the required sections are present. 
+It also extracts and prints the dates from the section "Meetings" which can be used to check if a student attended a residential class.
 
 ```
 
