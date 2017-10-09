@@ -23,7 +23,7 @@ paper1:
        and performing machine learning tasks on Big Data.
    url: https://github.com/bigdata-i523/hid203/paper1/report.pdf
    type: latex
-   status: 100% Completed
+   status: 99% Completed
    chapter: Technology
 ```
 
