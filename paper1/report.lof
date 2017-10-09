@@ -1,4 +1,2 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces A sample black and white graphic.\relax }}{5}{figure.caption.11}
-\contentsline {figure}{\numberline {2}{\ignorespaces A sample black and white graphic that has been resized with the \texttt {includegraphics} command.\relax }}{5}{figure.caption.12}
-\contentsline {figure}{\numberline {3}{\ignorespaces A sample black and white graphic that needs to span two columns of text.\relax }}{5}{figure.caption.13}
-\contentsline {figure}{\numberline {4}{\ignorespaces A sample black and white graphic that has been resized with the \texttt {includegraphics} command.\relax }}{5}{figure.caption.14}
+\contentsline {figure}{\numberline {1}{\ignorespaces Spark Architecture\citep {img_arch}\relax }}{5}{figure.caption.10}
+\contentsline {figure}{\numberline {2}{\ignorespaces Spark Ecosystem\citep {img_echo}\relax }}{5}{figure.caption.11}

@@ -1,27 +1,14 @@
 \begin{figure}
-\includegraphics{images/fly}
-\caption{A sample black and white graphic.}
+\includegraphics{images/spark-architecture}
+\caption{Spark Architecture\cite{img_arch}}
+\label{Figure 1}
 \end{figure}
 \efloatseparator
  
 \begin{figure}
-\includegraphics[height=1in, width=1in]{images/fly}
-\caption{A sample black and white graphic
-that has been resized with the \texttt{includegraphics} command.}
-\end{figure}
-\efloatseparator
- 
-\begin{figure*}
-\includegraphics{images/flies}
-\caption{A sample black and white graphic
-that needs to span two columns of text.}
-\end{figure*}
-\efloatseparator
- 
-\begin{figure}
-\includegraphics[height=1in, width=1in]{images/rosette}
-\caption{A sample black and white graphic that has
-been resized with the \texttt{includegraphics} command.}
+\includegraphics[height=3in, width=5in]{images/spark-ecosystem}
+\caption{Spark Ecosystem\cite{img_echo}}
+\label{Figure 2}
 \end{figure}
 \efloatseparator
  
