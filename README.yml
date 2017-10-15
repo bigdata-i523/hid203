@@ -4,10 +4,9 @@ owner:
     name: Chandwani, Nisha
     url: https://github.com/bigdata-i523/hid203
 paper1:
-    abstract: 'This paper will explore the Apache Spark platform for analyzing and
+    abstract: >
+        This paper will explore the Apache Spark platform for analyzing and
         performing machine learning tasks on Big Data.
-
-        '
     author:
         - Chandwani, Nisha
     chapter: Technology
