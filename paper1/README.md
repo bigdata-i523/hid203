@@ -9,4 +9,4 @@ E-mail: nchandwa@iu.edu
 
 Format: Latex
 
-Status: 100% Nov 04 2017
+Status: 100% Nov 08 2017
