@@ -61,6 +61,63 @@ Put here an introduction about your topic.
 We just need one sample refernce so the paper compiles in LaTeX so we
 put it here \cite{editor00}.
 
+\section{Big Data and Statistics}
+
+Put here an introduction about your topic. 
+We just need one sample refernce so the paper compiles in LaTeX so we
+put it here \cite{editor00}.
+
+
+\section{Traditional Predictive Modeling}
+
+Predictive modeling is one of the most important type of statistical analysis of big data. It aims to model the causal relationship between different features present in the data. Specifically, we try to predict the value of one variable, known as the dependent or response variable, with the help of one or more variables, known as independent or explanatory variables. The traditional predictive modeling process is shown in Figure 1.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]{images/fly.pdf}
+  \caption{Example caption}\label{f:fly}
+\end{figure}
+
+The steps in traditional predictive modeling are: \cite{part-reg}
+
+\subsection{Define Goal}
+For any predictive modeling, it is important to clearly define the goal, i.e., define the response variable and the explanatory variables that we are going to use to predict the response variable.
+\subsection{Data Collection and Management} 
+This is another critical step for predictive modeling which requires identifying the data that can be used for analysis. It can be the most time consuming step in the entire modeling process and may require some preliminary data exploration and visualization. It also involves identifying the feature set and the structure of each feature.
+\subsection{Data Preprocessing} 
+Before building any predictive model, it is important to perform data quality checks. Two major components of data preprocessing are 
+\begin{itemize}
+	\item Analyzing missing values: For missing values, it is important to identify whether we want to drop the missing entries in the data or impute them using standard imputation methods such as mean imputation for quantitative features and mode imputation for qualitative features.
+	\item Data transformation: The aim of data transformation is to convert it into a form which is easier to model. For example, normalization and standardization of data helps in better interpretation of the co-efficients of regression model. Some of the transformations also depend on the predictive model that we intend to apply. For example, for a linear regression model, it is important to ensure that the dependent and the independent variables have a linear relationship and that the dependent variable has a constant variance.
+\end{itemize}
+\subsection{Exploratory Data Analysis (EDA)} 
+As part of EDA, we try to summarize the data graphically and analyze each feature along with the relationship between different features. For summarization, a variety of summary statistics such as mean, median, variance, etc. are used. In case of predictive modeling, one might want to explore the data and visualize the numerical summary along with the correlation of different features in the data set.
+\subsection{Model-building and reporting}
+The final step involves building the predictive model using the clean transformed data. Different regression techniques such as linear regression can be employed for predicting the response variable from the independent variables. Once the model is built, it is evaluated using different metrics like co-efficient of determination.
+
+\section{Predictive Modeling with Big Data}
+
+Put here an introduction about your topic. 
+We just need one sample refernce so the paper compiles in LaTeX so we
+put it here \cite{editor00}.
+
+\subsection{Illustration}
+
+Put here an introduction about your topic. 
+We just need one sample refernce so the paper compiles in LaTeX so we
+put it here \cite{editor00}.
+
+\section{Big Data Systems and their support in R}
+
+Put here an introduction about your topic. 
+We just need one sample refernce so the paper compiles in LaTeX so we
+put it here \cite{editor00}.
+
+\section{Regression Techniques for Big Data}
+
+Put here an introduction about your topic. 
+We just need one sample refernce so the paper compiles in LaTeX so we
+put it here \cite{editor00}.
+
 \section{figures}
 
 In Figure \ref{f:fly} we show a fly. Please note that because we use
@@ -122,22 +179,5 @@ citations in the section.
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{report} 
 
-\appendix
-
-We include an appendix with common issues that we see when students
-submit papers. One particular important issue is not to use the
-underscore in bibtex labels. Sharelatex allows this, but the
-proceedings script we have does not allow this.
-
-When you submit the paper you need to address each of the items in the
-issues.tex file and verify that you have done them. Please do this
-only at the end once you have finished writing the paper. To d this
-cange TODO with DONE. However if you check something on with DONE, but
-we find you actually have not executed it correcty, you will receive
-point deductions. Thus it is important to do this correctly and not
-just 5 minutes before the deadline. It is better to do a late
-submission than doing the check in haste. 
-
-\input{issues}
 
 \end{document}
