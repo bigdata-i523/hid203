@@ -96,9 +96,24 @@ The final step involves building the predictive model using the clean transforme
 
 \section{Predictive Modeling with Big Data}
 
-Put here an introduction about your topic. 
-We just need one sample refernce so the paper compiles in LaTeX so we
-put it here \cite{editor00}.
+After having the background of the traditional predictive modeling, we now study the process of extending this method for big data. Traditional statistical analysis generally rely on a representative sample of data to make inference about the population \cite{part-reg}. However, in case of big data, relying on one sample may lead to incorrect predictions. Thus, we partition big data into subsets such that the size of these subsets is close enough to a sample. We achieve this by using one of the sampling techniques from statistics such as random sampling, stratified sampling or cluster sampling \cite{div-reg}. We then apply regression techniques to each of these samples independently. The final prediction is made by aggregating the results from each of these samples. The architecture for this divide-and-conquer regression analysis is as shown in Figure 2. Except for the model building step, all other steps are the same as that of traditional predictive modeling.
+
+\begin{figure}[!ht]
+  \centering\includegraphics[width=\columnwidth]{images/fly.pdf}
+  \caption{Example caption}\label{f:fly}
+\end{figure}
+
+This divided regression analysis is summarized as below \cite{div-reg}:
+
+\begin{itemize}
+	\item Divide big data: In this step, the data is divided into $M$ subsets by using one of the statistical sampling techniques.
+	\item Apply multiple linear regression analysis: Perform regression on each of these subsets and compute their respective regression parameters, $\hat{\beta_1}, \hat{\beta_2}, ...., \hat{\beta_m}$. Combine each of these parameters to compute the final regression co-efficient for the big data, $\hat{\beta_c}$ as below:
+	\begin{center}$\hat{\beta_c} = f_c(\hat{\beta_1}, \hat{\beta_2}, ...., \hat{\beta_m})$\end{center}
+	Here, $f_c$ is a combine function used for combining the co-efficients obtained from each of the $M$ subsets of data. This function can be defined in various ways based on the data. For example, we can define the combine function as the mean value of all the co-efficients: 
+	\begin{center} $\hat{\beta_c} = \frac{1}{M}\sum_{i=1}^M \hat{\beta_i}$ \end{center}
+	\item Evaluate the model: As part of model evaluation, we first check the confidence interval for all the co-efficients, obtained by applying the combine function, for all the independent variables. Next, we check the accuracy of the model by using some evaluation metric that measures how accurately the model predicts the value of the response variable. For example, we can use mean squared error ($MSE$) which is calculated as below:
+	\begin{center} $MSE = \frac{1}{n}\sum_{i=1}^n (Y_i - \hat{Y_i})^2$ \end{center}
+\end{itemize} 
 
 \subsection{Illustration}
 
@@ -106,11 +121,9 @@ Put here an introduction about your topic.
 We just need one sample refernce so the paper compiles in LaTeX so we
 put it here \cite{editor00}.
 
-\section{Big Data Systems and their support in R}
+\section{Big Data Systems and the support in R}
 
-Put here an introduction about your topic. 
-We just need one sample refernce so the paper compiles in LaTeX so we
-put it here \cite{editor00}.
+
 
 \section{Regression Techniques for Big Data}
 
