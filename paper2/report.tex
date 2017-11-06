@@ -48,7 +48,7 @@ somewhat loosely, to the formatting guidelines for
 ACM SIG Proceedings.
 \end{abstract}
 
-\keywords{Big Data, Edge Computing i523}
+\keywords{Big Data, Spark, Hadoop, R, Predictive Modeling, Regression, i523}
 
 
 \maketitle
@@ -92,7 +92,7 @@ Before building any predictive model, it is important to perform data quality ch
 \subsection{Exploratory Data Analysis (EDA)} 
 As part of EDA, we try to summarize the data graphically and analyze each feature along with the relationship between different features. For summarization, a variety of summary statistics such as mean, median, variance, etc. are used. In case of predictive modeling, one might want to explore the data and visualize the numerical summary along with the correlation of different features in the data set.
 \subsection{Model-building and reporting}
-The final step involves building the predictive model using the clean transformed data. Different regression techniques such as linear regression can be employed for predicting the response variable from the independent variables. Once the model is built, it is evaluated using different metrics like co-efficient of determination.
+The final step involves building the predictive model using the clean transformed data. Different regression techniques such as, linear regression, can be used for predicting the response variable from the independent variables. Basically, we try to estimate the co-efficient, $\hat{\beta}$, for each independent variable such that a unit change in the independent variable results in a change of $\hat{\beta}$ units in the mean value of the response variable. Once the model is built, it is evaluated using one of the several metrics like the co-efficient of determination.
 
 \section{Predictive Modeling with Big Data}
 
@@ -115,66 +115,46 @@ This divided regression analysis is summarized as below \cite{div-reg}:
 	\begin{center} $MSE = \frac{1}{n}\sum_{i=1}^n (Y_i - \hat{Y_i})^2$ \end{center}
 \end{itemize} 
 
-\subsection{Illustration}
-
-Put here an introduction about your topic. 
-We just need one sample refernce so the paper compiles in LaTeX so we
-put it here \cite{editor00}.
 
 \section{Big Data Systems and the support in R}
-
-
-
-\section{Regression Techniques for Big Data}
-
-Put here an introduction about your topic. 
-We just need one sample refernce so the paper compiles in LaTeX so we
-put it here \cite{editor00}.
-
-\section{figures}
-
-In Figure \ref{f:fly} we show a fly. Please note that because we use
-just columwidth that the size of the figure will change to the
-columnwidth of the paper once we change the layout to final. CHnaging
-the layout to final should not be done by you. All figures will be
-listed at the end.
-
+As explained in the previous section, regression analysis of big data can be efficiently performed by divide-and-conquer strategy. However, it is important to remember that big data processing deals with large volume of data and thus even in case of divided regression analysis, a single machine may not be enough. Thus, we require a distributed system where subsets of data are processed on multiple machines and the results are later aggregated to produce the final prediction as shown in Figure 3 \cite{dkr-reg}.
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]{images/fly.pdf}
   \caption{Example caption}\label{f:fly}
 \end{figure}
+Some of the available frameworks that support such distributed storage and parallel computing include Hadoop and Spark. We can use the power of these frameworks to achieve the distributed version of traditional predictive modeling techniques. Many programming languages support these data intensive computing paradigm. We discuss these frameworks and their support in one of the programming languages, i.e., R \cite{log-reg}. 
 
-When copying the example, please do not check in the images from the
-examples into your images directory as you will not need them for your
-paper. Instead use images that you like to include. If you do not have
-any images, do not dreate the images folder.
+\subsection{Hadoop} 
+Hadoop is an open-source Java-based distributed computing platform which is used for distributed storage and distributed processing of huge data sets on computer clusters \cite{log-reg}. All the modules of the Hadoop framework are fault-tolerant, i.e., they can automatically handle failures of individual machines in the framework. The four important modules of this framework are \cite{log-reg}:
 
-\section{Tables}
+\begin{itemize}
+	\item Hadoop Common provides all the Java libraries, utilities, OS level abstraction and the necessary files required by other modules
+	\item Hadoop Distributed File System (HDFS) for storing big data as well as providing high throughput access to this data
+	\item MapReduce for processing large volumes of data
+	\item Hadoop YARN for resource management and task scheduling
+\end{itemize}
 
-In case you need to create tables, you can do this with online tools
-(if you do not mind sharing your data) such as
-\url{https://www.tablesgenerator.com/} or other such tools (please
-google for them). They even allow you to manage tables as CSV.
+R provides RHadoop, a family of R packages, that acts as a wrapper for Hadoop streaming and allows execution of Hadoop jobs.Some of the important packages from RHadoop include rhdfs and rmr. Rhdfs is used for handling the HDFS operations such as file storage and file manipulation whereas rmr is primarily responsible for the map reduce function.
 
-or generate them by hand while using the provided template in Table\ref{t:mytable}. Not ethat
-the caption is before the tabular environment.
+\subsection{Spark} 
+Spark is another open-source distributed computing framework, however, unlike Hadoop, Spark is a memory based computing framework. Spark's in-memory processing capabilities often result in better performance as compared to Hadoop, especially when implementing iterative machine learning algorithms. The two key abstractions of Spark are:
 
-\begin{table}[htb]
-\centering
-\caption{My caption}
-\label{t:mytabble}
-\begin{tabular}{lll}
-1 & 2 & 3 \\
-\hline
-4 & 5 & 6 \\
-7 & 8 & 9
-\end{tabular}
-\end{table}
+\begin{itemize}
+	\item Resilient Distributed Datasets: Collection of fault-tolerant data items which can be operated in parallel.
+	\item Directed Acyclic Graph (DAG): DAG is a set of vertices and edges where vertices represent the RDDs and edges represent the operations to be applied on the vertices. Spark's DAG engine optimizes the execution by breaking down a Spark job into complex multi-step data pipeline to be executed on the cluster.
+\end{itemize}
 
-\section{Long example}
+R provides the package SparkR which is a light-weight frontend for using Apache Spark in R \cite{log-reg}. SparkR provides SparkContext which establishes a connection between the R program and the Spark cluster. Users can then use the RDD class provided by this package to explore the Spark API and interactively trigger jobs from the R shell on to the Spark cluster. SparkR also provides distributed machine learning support through MLlib \cite{log-reg}. Thus, with the help of this package, we can implement distributed version of the regression analysis.
 
-If you like to see a more elaborate example, please look at
-report-long.tex. 
+\section{Regression Techniques for Big Data}
+
+Using the distributed version, we can efficiently apply different kinds of regression for big data analysis. We now discuss some of these regression techniques:
+\begin{itemize}
+	\item Linear Regression
+	\item Lasso Regression
+	\item Ridge Regression
+	\item Logistic Regression
+\end{itemize}
 
 \section{Conclusion}
 
@@ -184,7 +164,7 @@ citations in the section.
 
 \begin{acks}
 
-  The authors would like to thank Dr. Gregor von Laszewski for his
+  We would like to thank Dr. Gregor von Laszewski for his
   support and suggestions to write this paper.
 
 \end{acks}
