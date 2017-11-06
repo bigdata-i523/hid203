@@ -28,3 +28,13 @@ paper2:
     title: Big Data Analytics Using Regression Techniques
     type: latex
     url: https://github.com/bigdata-i523/hid203/paper2/report.pdf
+project:
+    URL: null
+    abstract: TBD
+    author:
+        - Chandwani, Nisha
+    pid:
+        - 0
+    status: not started
+    title: TBD
+    type: latex
