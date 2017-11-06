@@ -47,17 +47,17 @@ Predictive modeling is one of the most important types of statistical analysis o
 Each of these steps in traditional predictive modeling is discussed in the following sections \cite{part-reg}.
 
 \subsection{Define Goal}
-For any predictive modeling, it is important to clearly define the goal, i.e., define the response variable and the explanatory variables that we are going to use to predict the response variable.
+For any predictive modeling, it is important to clearly define the goal, i.e., define the response variable and the explanatory variables that we are going to use to predict the response variable \cite{part-reg}.
 \subsection{Data Collection and Management} 
-This is another critical step for predictive modeling which requires identifying the data that can be used for analysis. It can be the most time-consuming step in the entire modeling process and may require some preliminary data exploration and visualization. It also involves identifying the feature set and the structure of each feature.
+This is another critical step for predictive modeling which requires identifying the data that can be used for analysis. It can be the most time-consuming step in the entire modeling process and may require some preliminary data exploration and visualization \cite{part-reg}. It also involves identifying the feature set and the structure of each feature.
 \subsection{Data Preprocessing} 
-Before building a predictive model, it is important to check the quality of data. Two major components of data preprocessing are:
+Before building a predictive model, it is important to check the quality of data. Two major components of data preprocessing are \cite{part-reg}:
 \begin{itemize}
 	\item Analyzing missing values: For missing values, it is important to identify whether we want to drop the missing entries in the data or impute them using standard imputation methods such as mean imputation for quantitative features and mode imputation for qualitative features.
 	\item Data transformation: The aim of data transformation is to convert it into a form which is easier to model. For example, normalization and standardization of data help in the better interpretation of the coefficients of the regression model. Some of the transformations also depend on the predictive model that we intend to apply. For example, for a linear regression model, it is important to ensure that the dependent and the independent variables have a linear relationship and that the dependent variable has a constant variance.
 \end{itemize}
 \subsection{Exploratory Data Analysis (EDA)} 
-As part of EDA, we try to summarize the data graphically and analyze each feature along with the relationship between different features. For summarization, a variety of summary statistics such as mean, median, variance, etc. are used. In case of predictive modeling, one might want to explore the data and visualize the numerical summary along with the correlation of different features in the data.
+As part of EDA, we try to summarize the data graphically and analyze each feature along with the relationship between different features. For summarization, a variety of summary statistics such as mean, median, variance, etc. are used \cite{part-reg}. In case of predictive modeling, one might want to explore the data and visualize the numerical summary along with the correlation of different features in the data.
 \subsection{Model-building and reporting}
 The final step involves building the predictive model using the clean transformed data. Different regression techniques such as linear regression can be used for predicting the response variable from the independent variables. Basically, we try to estimate the coefficient, $\hat{\beta}$, for each independent variable such that a unit change in the independent variable results in a change of $\hat{\beta}$ units in the mean value of the response variable. Once the model is built, it is evaluated using one of the several metrics like the coefficient of determination.
 
@@ -75,7 +75,7 @@ This divided regression analysis is summarized as below \cite{div-reg}:
 
 \begin{itemize}
 	\item Divide big data: In this step, the data is divided into $M$ subsets by using one of the statistical sampling techniques.
-	\item Apply multiple linear regression analysis: Perform regression on each of these subsets and compute their respective regression parameters, $\hat{\beta_1}, \hat{\beta_2}, ...., \hat{\beta_m}$. Combine each of these parameters to compute the final regression co-efficient for the big data, $\hat{\beta_c}$ as below:
+	\item Apply multiple linear regression analysis: Perform regression on each of these subsets and compute their respective regression parameters, $\hat{\beta_1}, \hat{\beta_2}, ...., \hat{\beta_m}$. Combine each of these parameters to compute the final regression co-efficient, $\hat{\beta_c}$ as below:
 	\begin{center}$\hat{\beta_c} = f_c(\hat{\beta_1}, \hat{\beta_2}, ...., \hat{\beta_m})$\end{center}
 	Here, $f_c$ is a combine function used for combining the co-efficients obtained from each of the $M$ subsets of data. This function can be defined in various ways based on the data. For example, we can define the combine function as the mean value of all the co-efficients: 
 	\begin{center} $\hat{\beta_c} = \frac{1}{M}\sum_{i=1}^M \hat{\beta_i}$ \end{center}
@@ -85,7 +85,7 @@ This divided regression analysis is summarized as below \cite{div-reg}:
 
 
 \section{Big Data Systems and the support in R}
-As explained in the previous section, regression analysis of big data can be efficiently performed by a divide-and-conquer strategy. However, it is important to remember that big data processing deals with a large volume of data and thus even in case of divided regression analysis, a single machine may not be enough. Thus, we require a distributed system where subsets of data are processed on multiple machines and the results are later aggregated to produce the final prediction as shown in Figure 3 \cite{dkr-reg}.
+As explained in the previous section, regression analysis of big data can be efficiently performed by a divide-and-conquer strategy. However, it is important to remember that big data processing deals with a large volume of data and thus even in case of divided regression analysis, a single machine might not be enough. Thus, we require a distributed system where subsets of data are processed on multiple machines and the results are later aggregated to produce the final prediction as shown in Figure 3 \cite{dkr-reg}.
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]{images/Fig3.png}
   \caption{A divide-and-conquer learning framework \cite{dkr-reg}}
@@ -103,7 +103,7 @@ Hadoop is an open-source Java-based distributed computing platform which is used
     \item Hadoop YARN for resource management and task scheduling
 \end{itemize}
 
-R provides RHadoop, a family of R packages, that acts as a wrapper for Hadoop streaming and allows execution of Hadoop jobs. Some of the important packages from RHadoop include rhdfs and rmr. Rhdfs is used for handling the HDFS operations such as file storage and file manipulation whereas rmr is primarily responsible for the map-reduce function.
+R provides RHadoop, a family of R packages, that acts as a wrapper for Hadoop streaming and allows execution of Hadoop jobs \cite{log-reg}. Some of the important packages from RHadoop include rhdfs and rmr. Rhdfs is used for handling the HDFS operations such as file storage and file manipulation whereas rmr is primarily responsible for the map-reduce function \cite{log-reg}.
 
 \subsection{Spark} 
 Spark is another open-source distributed computing framework, however, unlike Hadoop, Spark is a memory based computing framework. Spark's in-memory processing capabilities often result in better performance as compared to Hadoop, especially when implementing iterative machine learning algorithms. The two key abstractions of Spark are:
@@ -120,15 +120,15 @@ R provides the package SparkR which is a light-weight frontend for using Apache 
 Using the distributed version, we can efficiently apply different kinds of regression for big data analysis. We now provide an overview of some of these regression techniques:
 
 \subsection{Linear Regression}
-Linear regression is one of the most widely used regression techniques. It tries to model the relationship between a dependent variable and one more independent variables using a best-fit straight line which is represented by the equation below:
+Linear regression is one of the most widely used regression techniques. It tries to model the relationship between a dependent variable and one or more independent variables using a best-fit straight line which is represented by the equation below:
 \begin{center} $y = \beta_0 + \beta_1 x$ \end{center}
 The above gives the regression line, where $y$ represents the response variable and $x$ represents the independent variable, $\beta_0$ gives the intercept and $\beta_1$ gives the slope of the regression line. Once the coefficients, $\beta_0$ and $\beta_1$ are estimated, the regression line can be used to predict values of the response variable, $y$, for a given value of the explanatory variable, $x$. Linear regression has applications in various fields such as weather forecasting, stock price prediction, etc.
 
 \subsection{Regularized Regression}
-We always aim to build a machine learning model that generalizes well on the unseen data. Similarly, for regression, we would want to find the coefficients for the independent variables such that the resulting regression line has minimum prediction error for not only the training data but also for the unseen test data. In order to prevent over-fitting in regression, we use regularized regression techniques such as ridge regression and lasso regression. Ridge imposes $L_2$ regularization whereas Lasso imposes $L_1$ regularization on the coefficients of the independent variables. Ridge regression does a better job in presence of multicollinearity, i.e., when two or more independent features are correlated. Lasso regression does a better job when the number of independent variables is large. This is because the penalty imposed by lasso can shrink some of the coefficients to zero. Thus, lasso regression also provides feature selection in case of a large number of features.
+We always aim to build a machine learning model that generalizes well on the unseen data. Similarly, for regression, we would want to find the coefficients for the independent variables such that the resulting regression line has minimum prediction error for, not only the training data but also for the unseen test data. In order to prevent over-fitting in regression, we use regularized regression techniques such as ridge regression and lasso regression. Ridge imposes $L_2$ regularization whereas lasso imposes $L_1$ regularization on the coefficients of the independent variables. Ridge regression does a better job in presence of multicollinearity, i.e., when two or more independent features are correlated. Lasso regression does a better job when the number of independent variables is large. This is because the penalty imposed by lasso can shrink some of the coefficients to zero. Thus, lasso regression also provides feature selection in case of a large number of features.
 
 \subsection{Logistic Regression}
-Unlike linear regression which is used to predict the continuous value of the response variable, logistic regression is used when the response variable has a binary outcome. Thus, logistic regression is used for classification problems. It is used to model the relationship between the categorical response variable and one or more independent variables by estimating the probabilities using a logistic function \cite{log-reg}. Logistic regression has applications in many fields such as medical and social sciences. For instance, it can be used to predict whether the patient is suffering from a given disease based on the various attributes related to the patient like age, sex, body mass index, blood levels, etc. Another application for logistic regression is predicting whether a candidate will vote Democratic or Republican based on his age, sex, race, social economic status, etc. \cite{log-reg}.
+Unlike linear regression which is used to predict the continuous value of the response variable, logistic regression is used when the response variable has a binary outcome. Thus, logistic regression is used for classification problems. It is used to model the relationship between the categorical response variable and one or more independent variables by estimating the probabilities using a logistic function \cite{log-reg}. Logistic regression has applications in many fields such as medical and social sciences \cite{log-reg}. For instance, it can be used to predict whether the patient is suffering from a given disease based on the various attributes related to the patient like age, sex, body mass index, blood levels, etc. Another application for logistic regression is predicting whether a candidate will vote Democratic or Republican based on his age, sex, race, social economic status.
 
 \section{Conclusion}
 
