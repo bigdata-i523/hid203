@@ -16,3 +16,15 @@ paper1:
     title: Big Data Analytics using Spark
     type: latex
     url: https://github.com/bigdata-i523/hid203/paper1/report.pdf
+paper2:
+    abstract: >
+        This paper will focus on how big data is partitioned into subsets and how these subsets are used to build predictive models using different linear regression techniques.
+    author:
+        - Chandwani, Nisha
+    chapter: Technology
+    hid:
+        - 203
+    status: 100% Nov 06 2017
+    title: Big Data Analytics Using Regression Techniques
+    type: latex
+    url: https://github.com/bigdata-i523/hid203/paper2/report.pdf
