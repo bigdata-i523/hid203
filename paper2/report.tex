@@ -36,12 +36,12 @@ With increasing data from various sources, we have landed in the era of big data
 
 \section{Traditional Predictive Modeling}
 
-Predictive modeling is one of the most important types of statistical analysis of big data. It aims to model the causal relationship between different features present in the data. Specifically, we try to predict the value of one variable, known as the dependent or response variable, with the help of one or more variables, known as independent or explanatory variables. The traditional predictive modeling process is shown in Figure 1.
+Predictive modeling is one of the most important types of statistical analysis of big data. It aims to model the causal relationship between different features present in the data. Specifically, we try to predict the value of one variable, known as the dependent or response variable, with the help of one or more variables, known as independent or explanatory variables. The traditional predictive modeling process is shown in Figure \ref{fig:Fig1}.
 
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]{images/Fig1.png}
   \caption{Steps in the predictive modeling process \cite{part-reg}}
-  \label{Figure 1}
+  \label{fig:Fig1}
 \end{figure}
 
 Each of these steps in traditional predictive modeling is discussed in the following sections \cite{part-reg}.
@@ -63,12 +63,12 @@ The final step involves building the predictive model using the clean transforme
 
 \section{Predictive Modeling with Big Data}
 
-After having the background of the traditional predictive modeling, we now study the process of extending this method for big data. Traditional statistical analysis generally rely on a representative sample of data to make inference about the population \cite{part-reg}. However, in case of big data, relying on one sample may lead to incorrect predictions. Thus, we partition big data into subsets such that the size of these subsets is close enough to a sample. We achieve this by using one of the sampling techniques from statistics such as random sampling, stratified sampling or cluster sampling \cite{div-reg}. We then apply regression techniques to each of these samples independently. The final prediction is made by aggregating the results from each of these samples. The architecture for this divide-and-conquer regression analysis is as shown in Figure 2. Except for the model building step, all other steps are the same as that of traditional predictive modeling.
+After having the background of the traditional predictive modeling, we now study the process of extending this method for big data. Traditional statistical analysis generally rely on a representative sample of data to make inference about the population \cite{part-reg}. However, in case of big data, relying on one sample may lead to incorrect predictions. Thus, we partition big data into subsets such that the size of these subsets is close enough to a sample. We achieve this by using one of the sampling techniques from statistics such as random sampling, stratified sampling or cluster sampling \cite{div-reg}. We then apply regression techniques to each of these samples independently. The final prediction is made by aggregating the results from each of these samples. The architecture for this divide-and-conquer regression analysis is as shown in Figure \ref{fig:Fig2}. Except for the model building step, all other steps are the same as that of traditional predictive modeling.
 
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]{images/Fig2.png}
   \caption{Architecture for partitioning Big Data \cite{part-reg}}
-  \label{Figure 2}
+  \label{fig:Fig2}
 \end{figure}
 
 This divided regression analysis is summarized as below \cite{div-reg}:
@@ -85,11 +85,11 @@ This divided regression analysis is summarized as below \cite{div-reg}:
 
 
 \section{Big Data Systems and the support in R}
-As explained in the previous section, regression analysis of big data can be efficiently performed by a divide-and-conquer strategy. However, it is important to remember that big data processing deals with a large volume of data and thus even in case of divided regression analysis, a single machine might not be enough. Thus, we require a distributed system where subsets of data are processed on multiple machines and the results are later aggregated to produce the final prediction as shown in Figure 3 \cite{dkr-reg}.
+As explained in the previous section, regression analysis of big data can be efficiently performed by a divide-and-conquer strategy. However, it is important to remember that big data processing deals with a large volume of data and thus even in case of divided regression analysis, a single machine might not be enough. Thus, we require a distributed system where subsets of data are processed on multiple machines and the results are later aggregated to produce the final prediction as shown in Figure \ref{fig:Fig3} \cite{dkr-reg}.
 \begin{figure}[!ht]
   \centering\includegraphics[width=\columnwidth]{images/Fig3.png}
   \caption{A divide-and-conquer learning framework \cite{dkr-reg}}
-  \label{Figure 3}
+  \label{fig:Fig3}
 \end{figure}
 Some of the available frameworks that support such distributed storage and parallel computing include Hadoop and Spark. We can use the power of these frameworks to achieve the distributed version of traditional predictive modeling techniques. Many programming languages support these data-intensive computing paradigm. We discuss these frameworks and their support in one of the programming languages, i.e., R \cite{log-reg}.
 
