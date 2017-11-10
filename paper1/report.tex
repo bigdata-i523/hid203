@@ -37,7 +37,7 @@ The growth of data has been following an exponential rate with huge amounts of d
 
 \section{Spark}
 
-Spark is a general distributed computing framework which is based on Hadoop MapReduce algorithms \cite{fu2016spark-p1}. However, using Hadoop MapReduce for complex tasks requires frequent disk I/O which make Hadoop less suited for low-latency tasks. To overcome this, Spark extends the capability of MapReduce by providing in-memory computing which enables it to query data much faster than disk-based engines like Hadoop \cite{spark-j1}. Due to its memory computing capabilities, Spark is often used for iterative applications, such as Data Mining and Machine Learning \cite{fu2016spark-p1}. 
+Spark is an open-source distributed computing framework which is based on Hadoop MapReduce algorithms \cite{fu2016spark-p1}. However, using Hadoop MapReduce for complex tasks requires frequent disk I/O which make Hadoop less suited for low-latency tasks. To overcome this, Spark extends the capability of MapReduce by providing in-memory computing which enables it to query data much faster than disk-based engines like Hadoop \cite{spark-j1}. Due to its memory computing capabilities, Spark is often used for iterative applications, such as Data Mining and Machine Learning \cite{fu2016spark-p1}. 
 
 Apache Spark has a well-defined architecture which is based on two main abstractions \cite{spark-a2}:
 \begin{itemize}
@@ -46,12 +46,12 @@ Apache Spark has a well-defined architecture which is based on two main abstract
 \end{itemize}
 
 \subsection{Resilient Distributed Datasets (RDD)} 
-The entire framework of Spark is centered around RDD as it supports in-memory processing computation. This means it stores the state of memory in the form of an object across multiple jobs and the object is shared between these jobs \cite{spark-j2}. RDD is a collection of data items that can be operated in parallel and is stored in memory or on disk. This parallel data computing structure is read-only and is distributed over a cluster of machines offering a restricted form of distributed shared memory. RDDs are maintained in a fault-tolerant way and can cache intermediate data across a set of nodes. Thus, RDDs enable Spark to efficiently support iterative algorithms \cite{marcu2016spark-p2}.
+The entire framework of Spark is centered around RDD as it supports in-memory processing computation. This implies that it can store the state of memory in the form of an object across multiple jobs and the object is shared between these jobs \cite{spark-j2}. RDD is a collection of data items that can function in parallel and is stored in memory or on disk. This parallel data computing structure is read-only and is distributed over a cluster of machines offering a restricted form of distributed shared memory. RDDs are maintained in a fault-tolerant way as the intermediate data is cached across a set of nodes. Thus, RDDs enable Spark to efficiently support iterative algorithms \cite{marcu2016spark-p2}.
 
 RDD supports two types of operations \cite{spark-a3}:
 \begin{itemize}
-	\item Transformation: Operations like join, union, filter or map on existing RDDs which produce a new RDD as a result of the operation, are referred to as transformations.
-	\item Action: Operations like count, first and reduce which evaluate an existing RDD and return values after computations are referred to as Actions.
+	\item Transformation: Join, filter, union, map and various other operations that can be performed on existing RDDs which result in a new RDD at the end of the operation, are referred to as transformations.
+	\item Action: Count, first, reduce and various other operations which evaluate an existing RDD and return values at the end of these operations are referred to as Actions.
 \end{itemize}
 
 \subsection{Directed Acyclic Graph (DAG)} 
@@ -73,9 +73,9 @@ Apache Spark uses a master/worker architecture as shown in Figure 1. It mainly c
 \end{figure}
 
 \begin{itemize}
-	\item Driver Program: This program runs the main function of the Spark application. It is also responsible for the creation of the SparkContext object which basically coordinates the independent sets of processes running for an application on the cluster. The main components of the driver program are - DAGScheduler, TaskScheduler, BackendScheduler and BlockManager that translate the user code into Spark jobs that are executed on the cluster.
+	\item Driver Program: This program executes the main function of the Spark application. It is also responsible for the creation of the SparkContext object which basically coordinates the independent sets of processes running for an application on the cluster. The main components of the driver program are - DAGScheduler, TaskScheduler, BackendScheduler and BlockManager that translate the user code into Spark jobs that are executed on the cluster.
 	\item Executor: These are the worker processes that are responsible for the execution of tasks sent by the SparkContext object. Some of these tasks include processing the data, reading from and writing data to external sources, performing computations and storing the results in in-memory cache or on hard disk drives.
-	\item Cluster Manager: This is an external service that is responsible for acquiring resources on the Spark cluster and allocating them to the Spark jobs.
+	\item Cluster Manager: This is an external service that is responsible for obtaining resources on the Spark cluster and distributing them to the Spark jobs.
 \end{itemize}
 
 Being a memory-based computing platform, one of the most important factors of the Spark cluster is the memory. All the nodes, i.e., the driver and the executor nodes, should be equipped with at least 8 GB of memory for Spark to run well. For the cluster manager, Spark currently supports the below three deployments \cite{fu2016spark-p1}:
@@ -105,14 +105,14 @@ With a large number of companies now looking to expand their advanced analytics 
 
   \item MLlib is Spark's scalable Machine Learning library which is usable in Java, Python, Scala and R. MLlib supports high-quality algorithms such as classification, regression, clustering, recommendation, dimensionality reduction, etc. MLlib leverages Spark's excellence in iterative computing enabling it to run faster than MapReduce on huge datasets.
 
-  \item GraphX is Spark's parallel computation API used for charts and graphs processing \cite{fu2016spark-p1}. GraphX extends the capabilities of Spark RDD by introducing RDD graph which is a directed multi-graph with properties connected to each node and the edge \cite{spark-a1}. 
+  \item GraphX is Spark's parallel computation API that is used for charts and graphs processing \cite{fu2016spark-p1}. GraphX extends the capabilities of Spark RDD by introducing RDD graph which is a directed multi-graph with properties connected to each node and the edge \cite{spark-a1}. 
   
 \end{itemize}
 
-One of the challenges of analyzing big data is that it can come in any shape or size. Thus, whether big data is to be processed offline (Spark Core) or on the fly (Spark Streaming), whether it is structured (Spark SQL) or connected in nature (GraphX), Spark ecosystem is a framework that can be widely used in big data analytics.
+One of the challenges of analyzing big data is that it can come in any shape or size. Thus, whether big data is to be processed offline (Spark Core) or on the fly (Spark Streaming), whether it is structured (Spark SQL) or connected in nature (GraphX), Spark ecosystem is a framework that can be used extensively in big data analytics.
 
 \section{Spark versus Hadoop MapReduce}
-Both Spark and Hadoop MapReduce are widely used in big data analytics, however, Spark has some major use cases over Hadoop \cite{verma2016big-p3}:
+Both Spark and Hadoop MapReduce are extensively used in big data analytics, however, Spark has some major use cases over Hadoop \cite{verma2016big-p3}:
 \begin{itemize}
 	\item Unlike Hadoop, Spark supports interactive data mining and data processing
   \item Spark outperforms Hadoop when it comes to iterative algorithms in machine learning as it keeps working sets in memory for efficient reuse  
