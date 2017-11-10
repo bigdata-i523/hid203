@@ -37,38 +37,38 @@ The growth of data has been following an exponential rate with huge amounts of d
 
 \section{Spark}
 
-Spark is a general distributed computing framework which is based on Hadoop MapReduce algorithms\cite{fu2016spark-p1}. However, using Hadoop MapReduce for complex tasks requires frequent disk I/O which make Hadoop less suited for low-latency tasks. To overcome this, Spark extends the capability of MapReduce by providing in-memory computing which enables it to query data much faster than disk-based engines like Hadoop\cite{spark-j1}. Due to its memory computing capabilities, Spark is often used for iterative applications, such as Data Mining and Machine Learning\cite{fu2016spark-p1}. 
+Spark is a general distributed computing framework which is based on Hadoop MapReduce algorithms \cite{fu2016spark-p1}. However, using Hadoop MapReduce for complex tasks requires frequent disk I/O which make Hadoop less suited for low-latency tasks. To overcome this, Spark extends the capability of MapReduce by providing in-memory computing which enables it to query data much faster than disk-based engines like Hadoop \cite{spark-j1}. Due to its memory computing capabilities, Spark is often used for iterative applications, such as Data Mining and Machine Learning \cite{fu2016spark-p1}. 
 
-Apache Spark has a well-defined architecture which is based on two main abstractions\cite{spark-a2}:
+Apache Spark has a well-defined architecture which is based on two main abstractions \cite{spark-a2}:
 \begin{itemize}
 	\item Resilient Distributed Datasets (RDD)
 	\item Directed Acyclic Graph (DAG)
 \end{itemize}
 
 \subsection{Resilient Distributed Datasets (RDD)} 
-The entire framework of Spark is centered around RDD as it supports in-memory processing computation. This means it stores the state of memory in the form of an object across multiple jobs and the object is shared between these jobs\cite{spark-j2}. RDD is a collection of data items that can be operated in parallel and is stored in memory or on disk. This parallel data computing structure is read-only and is distributed over a cluster of machines offering a restricted form of distributed shared memory. RDDs are maintained in a fault-tolerant way and can cache intermediate data across a set of nodes. Thus, RDDs enable Spark to efficiently support iterative algorithms\cite{marcu2016spark-p2}.
+The entire framework of Spark is centered around RDD as it supports in-memory processing computation. This means it stores the state of memory in the form of an object across multiple jobs and the object is shared between these jobs \cite{spark-j2}. RDD is a collection of data items that can be operated in parallel and is stored in memory or on disk. This parallel data computing structure is read-only and is distributed over a cluster of machines offering a restricted form of distributed shared memory. RDDs are maintained in a fault-tolerant way and can cache intermediate data across a set of nodes. Thus, RDDs enable Spark to efficiently support iterative algorithms \cite{marcu2016spark-p2}.
 
-RDD supports two types of operations\cite{spark-a3}:
+RDD supports two types of operations \cite{spark-a3}:
 \begin{itemize}
 	\item Transformation: Operations like join, union, filter or map on existing RDDs which produce a new RDD as a result of the operation, are referred to as transformations.
 	\item Action: Operations like count, first and reduce which evaluate an existing RDD and return values after computations are referred to as Actions.
 \end{itemize}
 
 \subsection{Directed Acyclic Graph (DAG)} 
-Spark consists of an advanced Directed Acyclic Graph (DAG) engine which allows programmers to develop complex, multi-step data pipeline\cite{spark-a1}. Each Spark job creates a DAG of task stages to be executed on the cluster where each node in the DAG is an RDD partition and each edge represents a transformation to be applied on the data. This allows simple tasks to complete in a single stage whereas more complex tasks are completed in a single run of multiple stages, rather than splitting them into multiple jobs\cite{verma2016big-p3}. Thus, DAG abstraction eliminates the Hadoop MapReduce multi-stage execution model resulting in better performance\cite{spark-a2}.
+Spark consists of an advanced Directed Acyclic Graph (DAG) engine which allows programmers to develop complex, multi-step data pipeline \cite{spark-a1}. Each Spark job creates a DAG of task stages to be executed on the cluster where each node in the DAG is an RDD partition and each edge represents a transformation to be applied on the data. This allows simple tasks to complete in a single stage whereas more complex tasks are completed in a single run of multiple stages, rather than splitting them into multiple jobs \cite{verma2016big-p3}. Thus, DAG abstraction eliminates the Hadoop MapReduce multi-stage execution model resulting in better performance \cite{spark-a2}.
 
 \section{Spark Architecture and Hardware Introduction}
-Spark is built in programming language Scala and is run on Java Virtual Machine (JVM). In addition to Scala, it provides API for Java and Python as well. For running an application, Spark provides the following two options\cite{verma2016big-p3}:
+Spark is built in programming language Scala and is run on Java Virtual Machine (JVM). In addition to Scala, it provides API for Java and Python as well. For running an application, Spark provides the following two options \cite{verma2016big-p3}:
 \begin{itemize}
 	\item Interpreter in the Scala language distribution allows users to execute their queries on large data sets through Spark engine. 
 	\item Users can write their applications as Scala programs called driver programs. These driver programs can be then compiled and submitted to the cluster's master node.
 \end{itemize}
 
-Apache Spark uses a master/worker architecture as shown in Figure 1. It mainly consists of a driver program (SparkContext), workers (executors) and a cluster manager which are described below\cite{spark-a2}: 
+Apache Spark uses a master/worker architecture as shown in Figure 1. It mainly consists of a driver program (SparkContext), workers (executors) and a cluster manager which are described below \cite{spark-a2}: 
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{images/spark-architecture}
-\caption{Spark Architecture\cite{img-arch}}
+\caption{Spark Architecture \cite{img-arch}}
 \label{Figure 1}
 \end{figure}
 
@@ -78,7 +78,7 @@ Apache Spark uses a master/worker architecture as shown in Figure 1. It mainly c
 	\item Cluster Manager: This is an external service that is responsible for acquiring resources on the Spark cluster and allocating them to the Spark jobs.
 \end{itemize}
 
-Being a memory-based computing platform, one of the most important factors of the Spark cluster is the memory. All the nodes, i.e., the driver and the executor nodes, should be equipped with at least 8 GB of memory for Spark to run well. For the cluster manager, Spark currently supports the below three deployments\cite{fu2016spark-p1}:
+Being a memory-based computing platform, one of the most important factors of the Spark cluster is the memory. All the nodes, i.e., the driver and the executor nodes, should be equipped with at least 8 GB of memory for Spark to run well. For the cluster manager, Spark currently supports the below three deployments \cite{fu2016spark-p1}:
 
 \begin{itemize}
 	\item Standalone: It is a simple cluster manager included with Spark. Since Spark Standalone is available in the default configuration, it is the easiest way to set up a cluster and run applications on Spark.
@@ -87,11 +87,11 @@ Being a memory-based computing platform, one of the most important factors of th
 \end{itemize}
 
 \section{Spark for Big Data Analytics}
-With a large number of companies now looking to expand their advanced analytics capabilities, the ecosystem of Spark is right out of the box, making advanced analytics a reality. This ecosystem, as shown in Figure 2, provides an impressive set of high-level tools which include - Spark SQL for SQL, MLlib for machine learning, GraphX for graph processing and Spark Streaming\cite{fu2016spark-p1}. Each of these components is-
+With a large number of companies now looking to expand their advanced analytics capabilities, the ecosystem of Spark is right out of the box, making advanced analytics a reality. This ecosystem, as shown in Figure 2, provides an impressive set of high-level tools which include - Spark SQL for SQL, MLlib for machine learning, GraphX for graph processing and Spark Streaming \cite{fu2016spark-p1}. Each of these components is-
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{images/spark-ecosystem}
-\caption{Spark Ecosystem\cite{img-echo}}
+\caption{Spark Ecosystem \cite{img-echo}}
 \label{Figure 2}
 \end{figure}
 
@@ -105,14 +105,14 @@ With a large number of companies now looking to expand their advanced analytics 
 
   \item MLlib is Spark's scalable Machine Learning library which is usable in Java, Python, Scala and R. MLlib supports high-quality algorithms such as classification, regression, clustering, recommendation, dimensionality reduction, etc. MLlib leverages Spark's excellence in iterative computing enabling it to run faster than MapReduce on huge datasets.
 
-  \item GraphX is Spark's parallel computation API used for charts and graphs processing\cite{fu2016spark-p1}. GraphX extends the capabilities of Spark RDD by introducing RDD graph which is a directed multi-graph with properties connected to each node and the edge\cite{spark-a1}. 
+  \item GraphX is Spark's parallel computation API used for charts and graphs processing \cite{fu2016spark-p1}. GraphX extends the capabilities of Spark RDD by introducing RDD graph which is a directed multi-graph with properties connected to each node and the edge \cite{spark-a1}. 
   
 \end{itemize}
 
 One of the challenges of analyzing big data is that it can come in any shape or size. Thus, whether big data is to be processed offline (Spark Core) or on the fly (Spark Streaming), whether it is structured (Spark SQL) or connected in nature (GraphX), Spark ecosystem is a framework that can be widely used in big data analytics.
 
 \section{Spark versus Hadoop MapReduce}
-Both Spark and Hadoop MapReduce are widely used in big data analytics, however, Spark has some major use cases over Hadoop\cite{verma2016big-p3}:
+Both Spark and Hadoop MapReduce are widely used in big data analytics, however, Spark has some major use cases over Hadoop \cite{verma2016big-p3}:
 \begin{itemize}
 	\item Unlike Hadoop, Spark supports interactive data mining and data processing
   \item Spark outperforms Hadoop when it comes to iterative algorithms in machine learning as it keeps working sets in memory for efficient reuse  
@@ -127,7 +127,7 @@ With the increasing volume of data, big data analytics is only going to become m
 
 \begin{acks}
 
-  We would like to thank Prof. Gregor von Laszewski and the teaching assistants for their helpful suggestions. 
+  We would like to thank Dr. Gregor von Laszewski and the teaching assistants for their helpful suggestions. 
 
 \end{acks}
 
