@@ -21,7 +21,7 @@ paper2:
         This paper will focus on how big data is partitioned into subsets and how these subsets are used to build predictive models using different linear regression techniques.
     author:
         - Chandwani, Nisha
-    chapter: Technology
+    chapter: Machine Learning
     hid:
         - 203
     status: 100% Nov 06 2017
