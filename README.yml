@@ -29,15 +29,17 @@ paper2:
     type: latex
     url: https://github.com/bigdata-i523/hid203/paper2/report.pdf
 project:
-    URL: https://github.com/bigdata-i523/hid231/project/report.pdf
+    duplicate: True
+    url: https://github.com/bigdata-i523/hid231/project/report.pdf
     abstract: >
-        In this project, we will analyze the Open Food Facts database and predict the food grade based on the nutrition facts of the food products.
+        In this project, we will analyze the Open Food Facts database 
+        and predict the food grade based on the nutrition facts of the food products.
     author:
-        - Chandwani, Nisha
         - Vegi, Karthik
+        - Chandwani, Nisha
     hid:
-        - 203
         - 231
+        - 203
     status: 100% Dec 4, 2017
     title: Big Data Analytics on Food Products Around the World
     type: project
