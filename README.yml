@@ -14,7 +14,6 @@ paper1:
         - 203
     status: 100% Nov 10 2017
     title: Big Data Analytics using Spark
-    type: latex
     url: https://github.com/bigdata-i523/hid203/paper1/report.pdf
 paper2:
     abstract: >
@@ -26,7 +25,6 @@ paper2:
         - 203
     status: 100% Nov 06 2017
     title: Big Data Analytics Using Regression Techniques
-    type: latex
     url: https://github.com/bigdata-i523/hid203/paper2/report.pdf
 project:
     duplicate: True
